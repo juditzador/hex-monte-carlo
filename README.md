@@ -29,3 +29,8 @@ We record the paths traveled by the Gale algorithms. More precisely, if 1 wins,
 we record the cells along the Gale path with value 1, $p(G1\mid 1)$ and $p(G2 \mid 1)$, and if 2 wins, 
 we record the cells with 2, $p(G1 \mid 2)$ and $p(G2 \mid 2)$. Cells that appear in both cases, $p(G1)\cap p(G2)$,
 are given a point. This way, we only need $N \times 2 \times dim$ Gale algorithm evaluations.
+
+Finally, we are playing a compound game. In each round, we determine the pivotal point, and 
+fix it to 1 or 2 by a coin flip. In all subsequent games this cell is fixed. We continue the 
+game until there is a winner is unchangable, which happens when the fixed points themselves
+form a finished game scenario.
