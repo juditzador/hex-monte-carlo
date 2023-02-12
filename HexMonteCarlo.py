@@ -2,8 +2,6 @@
 
 import random, copy
 import numpy as np
-import pickle
-
 
 # Run Monte-Carlo simulations of Hex.
 
@@ -104,7 +102,7 @@ def Gale(board):
     #         /  |
     #        /   |
     #       /    |
-    #[0,0] v2-|-v3 [0,1]      0,0 is the top right on xBoard
+    #[0,0] v2-|-v3 [0,1]      0,0 is the top left on xBoard
     #      |  v  /
     #      |    /
     #      |   /
@@ -128,7 +126,7 @@ def Gale(board):
         #print("\t {0}-{1}".format(str(v2), str(v3)))
         
         # do not append sides to the chain
-        if (0 < v2[0] < sideLength + 1) and (0 < v2[1] < sideLength + 1):  # v2 is not on the boarder
+        if (0 < v2[0] < sideLength + 1) and (0 < v2[1] < sideLength + 1):  # v2 is not on the edge
             v2_chain.append([v2[0]-1, v2[1]-1])  # not in xBoard, but in board coordinates
         if (0 < v3[0] < sideLength + 1) and (0 < v3[1] < sideLength + 1):  # v2 is not on the boarder
             v3_chain.append([v3[0]-1, v3[1]-1])  # not in xBoard, but in board coordinates
