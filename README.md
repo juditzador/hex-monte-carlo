@@ -35,4 +35,4 @@ fix it to 1 or 2 by a coin flip. In all subsequent games this cell is fixed. We 
 game until there is a winner is unchangable, which happens when the fixed points themselves
 form a finished game scenario.
 
-Thisi is a project with my husband, [Alan](https://math.berkeley.edu/~alanmh/).
+This is a project with my husband, [Alan](https://math.berkeley.edu/~alanmh/).
