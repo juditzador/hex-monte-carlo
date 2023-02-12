@@ -34,3 +34,5 @@ Finally, we are playing a compound game. In each round, we determine the pivotal
 fix it to 1 or 2 by a coin flip. In all subsequent games this cell is fixed. We continue the 
 game until there is a winner is unchangable, which happens when the fixed points themselves
 form a finished game scenario.
+
+Thisi is a project with my husband, [Alan](https://math.berkeley.edu/~alanmh/).
