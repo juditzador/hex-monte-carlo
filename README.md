@@ -25,8 +25,8 @@ case, $w(B) \not = w(B')$, the cell gets a point. The cell with the most points 
 pivotal (most critical) one. This strategy requires a total of $N\times(dim \times dim+1)$ Gale algorithm
 evaluation, where $dim$ is the dimension of the board.
 
-In the new strategy, for each random board there are only two Gale algorithm evaluations
-are done. One from the top left corner, $G1$, as originally, and one from the bottom
+In the new strategy, for each random board there are only two Gale algorithm evaluations. 
+One from the top left corner, $G1$, as originally, and one from the bottom
 right corner, $G2$. The latter is practically achieved by rotating the board by 180 degrees in the code. The
 winner is of course invariant to the starting point, $w(B)=G1(B)=G2(B)$, but the paths are different, $p(G1(B))\not =p(G2(B))$. 
 We record the paths traveled by the Gale algorithms. More precisely, if player 1 wins, 
