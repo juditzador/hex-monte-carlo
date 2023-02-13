@@ -178,7 +178,7 @@ def BernoulliRandomBoard(sidelength):
 
 N = 1000;
 
-halfBoardSize = 15;
+halfBoardSize = 5;
 BoardSize = 2*halfBoardSize + 1
 
 
@@ -188,7 +188,7 @@ max_location = []  # location of the critical point
 max_location_val = []  # coin flip outcome at max_location
 win1_history = []  # probability of player 1 winning in a round (board scenario)
 max_val_history = []  # accumulated critical point values, normalized by N
-win_margin_history = []  # difference between best cirtical point and the second one, normalized by N
+win_margin_history = []  # difference between best critical point and the second one, normalized by N
 
 for step in range(BoardSize * BoardSize):
     criticalCount = np.zeros((BoardSize, BoardSize));
@@ -226,15 +226,22 @@ for step in range(BoardSize * BoardSize):
         break
     else:
         max_val = np.max(criticalCount)
-        sec_max_val = criticalCount.sort()[1]  # second element
-        win_margin_history,append((max_val - sec_max_val) / max_val)
+        flat_criticalCount = [j for sub in criticalCount for j in sub]
+        print(flat_criticalCount)
+        flat_criticalCount.sort()
+        print(flat_criticalCount)
+        sec_max_val = flat_criticalCount[-2]  # second element
+        margin = (max_val - sec_max_val) / max_val
+        win_margin_history.append(margin)
         max_x = np.unravel_index(np.argmax(criticalCount), criticalCount.shape)[0]
         max_y = np.unravel_index(np.argmax(criticalCount), criticalCount.shape)[1]
         max_location.append([max_x, max_y])
         max_location_val.append(random.choice([1,2]))  # fixing it to 1 or 2 for next round
         win1_history.append(win1/N)
         max_val_history.append(max_val / N)
-        print(f'The maximum is at {max_location[-1]} with value {max_val}, fixing to {max_location_val[-1]}. Player 1 won {win1} times out of {N} games.')
+        print(f'The maximum is at {max_location[-1]} with value {max_val}'
+              f'and margin {margin}, fixing to {max_location_val[-1]}.' 
+              f'Player 1 won {win1} times out of {N} games.')
         
         
 board_pattern = np.zeros((BoardSize, BoardSize));
