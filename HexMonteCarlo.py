@@ -6,7 +6,6 @@ import numpy as np
 # Run Monte-Carlo simulations of Hex.
 
 # TODO:
-# -- Implement Gale's algorithm for determining who wins a filled board
 # -- Generate random Hex boards (Ramsey, Standard, and Symmetric)
 
 # the standard board structure:
