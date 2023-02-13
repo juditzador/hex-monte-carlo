@@ -227,9 +227,7 @@ for step in range(BoardSize * BoardSize):
     else:
         max_val = np.max(criticalCount)
         flat_criticalCount = [j for sub in criticalCount for j in sub]
-        print(flat_criticalCount)
         flat_criticalCount.sort()
-        print(flat_criticalCount)
         sec_max_val = flat_criticalCount[-2]  # second element
         margin = (max_val - sec_max_val) / max_val
         win_margin_history.append(margin)
@@ -239,8 +237,8 @@ for step in range(BoardSize * BoardSize):
         max_location_val.append(random.choice([1,2]))  # fixing it to 1 or 2 for next round
         win1_history.append(win1/N)
         max_val_history.append(max_val / N)
-        print(f'The maximum is at {max_location[-1]} with value {max_val}'
-              f'and margin {margin}, fixing to {max_location_val[-1]}.' 
+        print(f'The maximum is at {max_location[-1]} with value {max_val} '
+              f'and margin {round(margin,3)*100}%, fixing to {max_location_val[-1]}. ' 
               f'Player 1 won {win1} times out of {N} games.')
         
         
